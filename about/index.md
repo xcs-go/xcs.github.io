@@ -1,3 +1,4 @@
+<!-- 
 ---
 layout: page
 title: About the Theme
@@ -35,3 +36,19 @@ See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub
 To learn how to install and use this theme check out the [Setup Guide](http://taylantatli.me/Moon/moon-theme/) for more information.
       
 [Install Moon](https://github.com/TaylanTatli/Moon){: .btn}
+ -->
+---
+layout: post
+title: "personal introduction"
+date: 2017-10-01
+excerpt: "前端开发工程师一枚"
+tags:
+- HTML+CSS+JAVASCRIPT
+- JQUERY
+- NODE
+- REACT/VUE
+comments: true
+---
+
+## 个人介绍
+姓名：谢朝森  性别：男
