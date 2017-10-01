@@ -1,3 +1,21 @@
+---
+layout: post
+title: "personal introduction"
+date: 2017-10-01
+excerpt: "前端开发工程师一枚"
+tags:
+- HTML+CSS+JAVASCRIPT
+- JQUERY
+- NODE
+- REACT/VUE
+comments: true
+---
+
+## 个人介绍
+姓名：谢朝森  性别：男
+
+
+
 <!-- 
 ---
 layout: page
@@ -37,18 +55,3 @@ To learn how to install and use this theme check out the [Setup Guide](http://ta
       
 [Install Moon](https://github.com/TaylanTatli/Moon){: .btn}
  -->
----
-layout: post
-title: "personal introduction"
-date: 2017-10-01
-excerpt: "前端开发工程师一枚"
-tags:
-- HTML+CSS+JAVASCRIPT
-- JQUERY
-- NODE
-- REACT/VUE
-comments: true
----
-
-## 个人介绍
-姓名：谢朝森  性别：男
