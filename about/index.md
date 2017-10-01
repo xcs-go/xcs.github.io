@@ -1,13 +1,9 @@
 ---
-layout: post
-title: "personal introduction"
+layout: page
+title: "About me"
+tags: [HTML+CSS+JAVASCRIPT,JQUERY,NODE,REACT/VUE]
 date: 2017-10-01
 excerpt: "前端开发工程师一枚"
-tags:
-- HTML+CSS+JAVASCRIPT
-- JQUERY
-- NODE
-- REACT/VUE
 comments: true
 ---
 
