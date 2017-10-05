@@ -9,6 +9,7 @@ tags:
 - github
 - githubpages
 comments: true
+category: "jekyll"
 ---
 
 ### 创建个人的第一个博客

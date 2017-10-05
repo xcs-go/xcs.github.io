@@ -1,0 +1,11 @@
+---
+layout: page
+title: "About me"
+tags: [HTML+CSS+JAVASCRIPT,JQUERY,NODE,REACT/VUE]
+date: 2017-10-01
+excerpt: "前端开发工程师一枚"
+comments: true
+---
+
+## 个人介绍
+姓名：谢朝森  性别：男
