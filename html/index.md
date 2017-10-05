@@ -1,11 +1,10 @@
 ---
 layout: page
 title: "About me"
-tags: [HTML+CSS+JAVASCRIPT,JQUERY,NODE,REACT/VUE]
+tags: [HTML]
 date: 2017-10-01
-excerpt: "前端开发工程师一枚"
+excerpt: "html基础知识整理"
 comments: true
 ---
 
-## 个人介绍
-姓名：谢朝森  性别：男
+## html基础知识

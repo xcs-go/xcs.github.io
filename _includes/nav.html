@@ -93,12 +93,17 @@
 				</ul>
 			</li>
             <li>
-                <a href="#">Html</a>
-                <ul class="dl-submenu">
+                <a href="#">HTML</a>
+                <ul>
                     <li><a href="{{site.url}}/html/">All html</a></li>
                     <li><a href="{{site.url}}/css/">All css</a></li>
                 </ul>
-                <ul></ul>
+            </li>
+            <li>
+                <a href="#">HTML</a>
+                <ul>
+                    <li><a href="{{site.url}}/node/">node</a></li>
+                </ul>
             </li>
 			{% for link in site.data.navigation %}
 		    {% if link.url contains 'http' %}
