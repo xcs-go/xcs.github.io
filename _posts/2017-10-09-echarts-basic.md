@@ -37,7 +37,8 @@ ECharts，一个纯 Javascript 的图表库,可以同时运行在pc和移动端�
           npm install echarts --save
         在项目中通过require引入Echarts。
           var echart = require('echarts');
-    {% endhighlight %}    
+    {% endhighlight %} 
+       
 3. 定义一个具有一定高度和宽度的DOM容器。用来展示ECharts渲染完成后的图表。
    {% highlight html %}
       <!-- 需要在样式表中设定宽高 -->
@@ -50,6 +51,6 @@ ECharts，一个纯 Javascript 的图表库,可以同时运行在pc和移动端�
     {% endhighlight javascript %}
 5. 调用实例的setOption()方法进行有关配置
     {% highlight javascript %}
-    var option = {};
+    var option = {// 进行有关的配置};
     myEcharts.setOption(option);   
     {% endhighlight %}
