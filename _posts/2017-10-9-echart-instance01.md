@@ -23,9 +23,10 @@ category: echarts
   var myEchart = echarts.init(echartsDOM);
   {% endhighlight %}
   在调用了echarts.init()方法之后，我们就需要对图表进行有关的配置。
-  首先，我们先设置一个x,y轴
+  首先，我们先设置一个标题和x,y轴
   {% highlight javascript %}
   var option = {
+    text:"my first echart",
     // 配置x,y轴
     xAxis:{
         data:['apple','huawei','vivo','oppo','vivo']
@@ -55,4 +56,36 @@ category: echarts
                   //}
               }, 
     }
+  {% endhighlight %}
+  
+  设置图表系列series
+  {% highlight javascript %}
+    var option = {
+        // 配置x,y轴
+        xAxis:{
+            data:['apple','huawei','vivo','oppo','vivo']
+        },
+        yAxis:{},// 如果不设置，echarts就会根据数据进行自动计算
+        legend:{  // 图例配置
+                    show:true, // 是否显示图例组件
+                    data:['销量'], // 图例
+                    right:'50',  // 图例组件距离容器右边的距离
+                    orient:'vertical', // 图例组件的布局朝向
+                    padding:[10 ,20], // 图例组件距离容器的内边距
+                    // itemWidth:40, // 设置图例图形的宽度
+                    // itemHeight:30 // 设置图例图形的高度
+                    // formatter:function (name) {// 用来格式化图例文本
+                    //    return 'Legend' + name
+                    //}
+                }, 
+         series:{
+         type:'bar', // 通过type设置图表的类型，如柱状图，折线图等
+         name: '销量',
+         data: [5, 20, 36, 10, 10, 20]  // 通过data来设置图表展示的数据
+         },       
+      }
+    {% endhighlight %}
+  最后将option作为参数传递给setOption()方法
+  {% highlight javascript %}
+    myEchart.setOption(option);
   {% endhighlight %}
