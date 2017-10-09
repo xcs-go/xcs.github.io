@@ -28,6 +28,13 @@ ECharts，一个纯 Javascript 的图表库,可以同时运行在pc和移动端�
 2. 引入echarts文件
     > 引入echarts文件有有以下几种方法：
     {% highlight html %}
-    <!-- 引入 ECharts 文件 -->
+    <!-- 引入下载的ECharts 文件 -->
     1. <script src="echarts.min.js"></script>
+    2. <!-- 通过cdn引入ECharts文件 -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.7.1/echarts.common.min.js"></script>
+    3. <!-- 在webpack中使用 -->
+        在终端执行以下代码:
+        - npm install echarts --save
+        在项目中通过require引入Echarts。
+        var echart = require('echarts');
     {% endhighlight %}    

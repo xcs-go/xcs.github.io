@@ -5,7 +5,7 @@ description:        "该博客主要用来记录个人学习，生活。帮助�
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/logo.png'
-# background:         'assets/img/placeholder-big.jpg'
+background:         'assets/img/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                https://xcs-go.github.io/xcs.github.io/
