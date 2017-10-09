@@ -14,7 +14,7 @@ category: echarts
   {% highlight html %}
   <!--引入echarts文件-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.7.1/echarts.common.min.js"></script>
-  <div id = 'echarts'></div>
+  <div id ='echarts'></div>
   {% endhighlight %}
   
   在js中，做如下设置:
@@ -89,3 +89,5 @@ category: echarts
   {% highlight javascript %}
     myEchart.setOption(option);
   {% endhighlight %}
+  
+  更多的配置选项请看官方配置项:<http://echarts.baidu.com/option.html>
