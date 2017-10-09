@@ -22,13 +22,13 @@ layout: compress
                 </a>
             </div>
             <div class="post-list">
-                {% for echart in site.echarts %}
-                {% if echart.project == null %}
+                {% for post in site.posts %}
+                {% if post.project == null %}
                 <ul>
                     <li class="wow fadeInLeft" data-wow-duration="1.5s">
-                        <a class="zoombtn" href="{{ site.url }}{{ echart.url }}">{{ echart.title }}</a>
-                        <p>{{ echart.excerpt }}</p>
-                        <a href="{{ site.url }}{{ echart.url }}" class="btn zoombtn">Read More</a>
+                        <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                        <p>{{ post.excerpt }}</p>
+                        <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
                     </li>
                 </ul>
                 {% endif %}
