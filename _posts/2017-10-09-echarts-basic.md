@@ -20,4 +20,12 @@ ECharts，一个纯 Javascript 的图表库,可以同时运行在pc和移动端�
   
   交互式数据：如 legend visualMap dataZoom tooltip等。例如设置了legend可以通过点击legend，实现有关的数据是否显示；设置visualMap可以实现拖拽显示与之对应的数据。
 
-  大数据量的展现
+  处理大批量的数据
+  
+  多维度展示数据
+  
+  动态数据展现
+  
+  丰富的特效
+
+更多信息请参考官网:<http://echarts.baidu.com/feature.html> 
