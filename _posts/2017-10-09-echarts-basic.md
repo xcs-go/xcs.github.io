@@ -26,7 +26,7 @@ ECharts，一个纯 Javascript 的图表库,可以同时运行在pc和移动端�
 ## 在项目中使用
 1. 根据项目的需求选择相应的文件下载，详细信息参考官网: <http://echarts.baidu.com/download.html>
 2. 引入echarts文件
-    > 引入echarts文件有有以下几种方法：
+    > 引入echarts文件有以下几种方法：
     {% highlight html %}
     <!-- 引入下载的ECharts 文件 -->
     1. <script src="echarts.min.js"></script>
@@ -34,7 +34,22 @@ ECharts，一个纯 Javascript 的图表库,可以同时运行在pc和移动端�
        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.7.1/echarts.common.min.js"></script>
     3. <!-- 在webpack中使用 -->
         在终端执行以下代码:
-        - npm install echarts --save
+          npm install echarts --save
         在项目中通过require引入Echarts。
-        var echart = require('echarts');
+          var echart = require('echarts');
     {% endhighlight %}    
+3. 定义一个具有一定高度和宽度的DOM容器。用来展示ECharts渲染完成后的图表。
+   {% highlight html %}
+      <!-- 需要在样式表中设定宽高 -->
+      <div id="echarts"></div>
+   {% endhighlight %}
+4. 在js中，通过调用echarts.init()方法，并且将用于展示echarts图表的容器作为参数传入。
+    {% highlight javascript %}
+    var echartsDOM = document.getElementById('echarts');
+    var myEcharts = echarts.init(echartsDOM);
+    {% endhighlight javascript %}
+5. 调用实例的setOption()方法进行有关配置
+    {% highlight javascript %}
+    var option = {};
+    myEcharts.setOption(option);   
+    {% endhighlight %}
