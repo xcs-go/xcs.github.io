@@ -51,6 +51,8 @@ ECharts，一个纯 Javascript 的图表库,可以同时运行在pc和移动端�
     {% endhighlight javascript %}
 - 调用实例的setOption()方法进行有关配置
     {% highlight javascript %}
-    var option = {进行有关的配置};
+    var option = {
+        // 进行有关的配置
+    };
     myEcharts.setOption(option);   
     {% endhighlight %}
