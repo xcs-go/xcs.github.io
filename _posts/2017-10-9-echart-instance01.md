@@ -33,3 +33,26 @@ category: echarts
     yAxis:{},// 如果不设置，echarts就会根据数据进行自动计算
   }
   {% endhighlight %}
+  
+  设置图例legend
+  {% highlight javascript %}
+  var option = {
+      // 配置x,y轴
+      xAxis:{
+          data:['apple','huawei','vivo','oppo','vivo']
+      },
+      yAxis:{},// 如果不设置，echarts就会根据数据进行自动计算
+      legend:{  // 图例配置
+                  show:true, // 是否显示图例组件
+                  data:['销量'], // 图例
+                  right:'50',  // 图例组件距离容器右边的距离
+                  orient:'vertical', // 图例组件的布局朝向
+                  padding:[10 ,20], // 图例组件距离容器的内边距
+                  // itemWidth:40, // 设置图例图形的宽度
+                  // itemHeight:30 // 设置图例图形的高度
+                  // formatter:function (name) {// 用来格式化图例文本
+                  //    return 'Legend' + name
+                  //}
+              }, 
+    }
+  {% endhighlight %}
