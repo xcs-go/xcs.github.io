@@ -25,3 +25,19 @@ category: javascript
     // do something 
   }
   {% endhighlight %}  
+
+## 严格模式对编写代码的影响
+  常见的影响有以下几个:
+ 
+  - 在严格模式下，变量的声明必须使用var开始，不能省略，在正常模式下，可以省略，省略即为全局变量。
+  {% highlight javascript %}
+  
+  // 严格模式下
+  "use strict"
+  a = 10; // 报错:Uncaught ReferenceError: a is not defined
+  console.log(a);
+  
+  // 正常模式下
+  a = 10;
+  console.log(a); //  10
+  {% endhighlight %}
