@@ -118,3 +118,5 @@ category: javascript
   });
   o.x = 2; // 报错:Uncaught TypeError: Cannot assign to read only property 'x' of object '#<Object>'
   {% endhighlight %}
+  
+  关于更多的严格模式的限制，请参考以下这篇文章：<http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html>
