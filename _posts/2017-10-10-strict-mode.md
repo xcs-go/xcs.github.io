@@ -16,3 +16,12 @@ category: javascript
   {% highlight javascript %}
     "use strict";
   {% endhighlight %}
+
+## 局部严格模式
+  如果在函数内部最顶部添加了'use strict';则在该函数内部启用了严格模式
+  {% highlight javascript %}
+  function useStrict(){
+    "use strict";
+    // do something 
+  }
+  {% endhighlight %}  
