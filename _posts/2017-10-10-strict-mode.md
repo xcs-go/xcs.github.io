@@ -94,9 +94,27 @@ category: javascript
   - 在严格模式下，函数的arguments属性和caller属性不能使用
   {% highlight javascript %}
   function f1(){
-  　"use strict";
-  　f1.caller; // 报错
-  　f1.arguments; // 报错
+    "use strict";
+    f1.caller;  // 报错: Uncaught TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+    f1.arguments;
   }
   f1();
+  {% endhighlight %}
+  
+  - 在严格模式下，删除configurable配置为false的变量，会报错
+  {% highlight javascript %}
+  "use strict";
+  var a = 1;
+  delete a; // 报错:Uncaught SyntaxError: Delete of an unqualified identifier in strict mode.
+  {% endhighlight %}
+  
+  - 在严格模式下，对一个对象的只读属性赋值会报错，正常模式下会失败。
+  {% highlight javascript %}
+  "use strict";
+  var o = {};
+  Object.defineProperty(o,'x',{
+    value:1,
+    writeable:false
+  });
+  o.x = 2; // 报错:Uncaught TypeError: Cannot assign to read only property 'x' of object '#<Object>'
   {% endhighlight %}
