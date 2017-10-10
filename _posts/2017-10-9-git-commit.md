@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "git commit"
-tags: [echarts]
+tags: [git]
 date: 2017-10-09
 excerpt: "git学习"
 comments: true

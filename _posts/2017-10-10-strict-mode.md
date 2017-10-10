@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "javascript严格模式"
-tags: [javascript,strict]
+tags: [javascript]
 date: 2017-10-10
 excerpt: "javascript严格模式"
 comments: true
