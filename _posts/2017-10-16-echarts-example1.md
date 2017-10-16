@@ -110,7 +110,7 @@ category: echarts
   #### - 柱状图
     {% highlight javascript %}
         var option = {
-            
+            title:'echarts基础图之柱状图',     
         }
     {% endhighlight %}
 
