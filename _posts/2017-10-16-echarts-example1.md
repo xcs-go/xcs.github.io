@@ -19,21 +19,34 @@ category: echarts
 {% highlight html %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.7.1/echarts.common.min.js"></script>
 {% endhighlight %}
+
 - 新建一个Dom容器，用来渲染Echarts图
 {% highlight html %}
 <div id='echart'></div>
 {% endhighlight %}
 
-#### - 折线图
+- 调用echarts.init()方法
+    {% highlight javascript %}
+    var dom = document.getElementById('echart');
+    var echart = echarts.init(dom);
+    {% endhighlight %}
+
+- 配置option,根据不同的图表类型进行不同的配置
+  #### - 折线图
 
 
-#### - 柱状图
+  #### - 柱状图
 
 
-#### - 饼图
+  #### - 饼图
 
 
-#### - 地理图
+  #### - 地理图
 
 
-#### - 雷达图
+  #### - 雷达图
+
+- 将配置好的option作为参数传入setOption()方法中.
+{% highlight javascript %}
+echart.setOption(option);
+{% endhighlight %}
