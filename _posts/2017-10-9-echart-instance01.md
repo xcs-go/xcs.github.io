@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "echarts示例"
+title: "echarts示例一"
 tags: [echarts]
 date: 2017-10-09
 excerpt: "echarts学习"
@@ -78,7 +78,7 @@ category: echarts
                     //    return 'Legend' + name
                     //}
                 }, 
-         series:{
+         series:{ // 可以通过设置series来表示显示的是那种系列
          type:'bar', // 通过type设置图表的类型，如柱状图，折线图等
          name: '销量',
          data: [5, 20, 36, 10, 10, 20]  // 通过data来设置图表展示的数据
