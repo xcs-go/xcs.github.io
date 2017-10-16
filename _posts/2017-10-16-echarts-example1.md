@@ -106,8 +106,7 @@ category: echarts
         }
     {% endhighlight %}
 
-  以上是折线图的基本用法，下面我们来看看柱状图的基本用法：
-  
+- 以上是折线图的基本用法，下面我们来看看柱状图的基本用法：
   #### - 柱状图
     {% highlight javascript %}
         var option = {
@@ -115,7 +114,7 @@ category: echarts
         }
     {% endhighlight %}
 
-
+- 以上是柱状图的基本用法，下面我们来看看饼图的基本用法：
   #### - 饼图
     {% highlight javascript %}
          var option = {
@@ -123,7 +122,7 @@ category: echarts
          }
     {% endhighlight %}
     
-    
+- 以上是饼图的基本用法，下面我们来看看地理图的基本用法：    
   #### - 地理图
     {% highlight javascript %}
         var option = {
@@ -131,7 +130,7 @@ category: echarts
         }
     {% endhighlight %}
 
-
+- 以上收地理图的基本用法，下面我们来看看雷达图的基本用法：
   #### - 雷达图
     {% highlight javascript %}
         var option = {
