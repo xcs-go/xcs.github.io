@@ -106,12 +106,15 @@ category: echarts
         }
     {% endhighlight %}
 
+  以上是折线图的基本用法，下面我们来看看柱状图的基本用法：
+  
   #### - 柱状图
     {% highlight javascript %}
         var option = {
             
         }
     {% endhighlight %}
+
 
   #### - 饼图
     {% highlight javascript %}
@@ -120,12 +123,14 @@ category: echarts
          }
     {% endhighlight %}
     
+    
   #### - 地理图
     {% highlight javascript %}
         var option = {
             
         }
     {% endhighlight %}
+
 
   #### - 雷达图
     {% highlight javascript %}
