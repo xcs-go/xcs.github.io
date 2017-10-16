@@ -42,9 +42,66 @@ category: echarts
                 textStyle:{  // 设置标题文字的样式
                     color:'#f00'
                 }
-            }
-            series:{
+            },
+            xAxis:{
+                min:0, // 设置x轴的最小值
+                max:100, // 设置x轴的最大值
+                name:'x',
+                splitLine:{ // 设置x轴的网格
+                    show:false // 默认显示
+                }
+            },
+            yAxis:{
+                min:0,
+                max:120,
+                name:'y',
+                nameTextStyle:{ // 设置坐标轴文字的样式
+                    color:'#f00'
+                },
+                splitNumber:12  // 设置坐标轴被分割成几段，只是一个预估值，实际上是会根据数据做一些调整.
+                //nameGap:15 设置坐标轴文字与坐标轴之间的距离，默认是15
+            },
+            series:{  // 系列列表；图表所展示的数据，样式，线条等，在这里进行设置
                 type:'line', // series.type用来设置系列图的类型；line表示的是折线图
+                smooth:true, // 设置折线是否是平滑的，true表示平滑展示，false表示非平滑展示。默认为false.
+                data:[
+                       [0,0],
+                       [15,10],
+                       [40,29],
+                       [30,50],
+                       [60,80],
+                       [80,90],
+                       [100,20]
+                     ],
+                areaStyle:{  // 设置数据区域的样式
+                      normal:{
+                          color:'#ff0',
+                          opacity:.8
+                      }
+                  },
+                  lineStyle:{ // 设置线条的样式,包括线条类型，透明度，颜色等
+                      normal:{
+                          type:'dashaed',
+                          opacity:.6,
+                          color:'#0d0'
+                      }
+                  },
+                  itemStyle:{ // 设置折线拐点的样式
+                      normal:{
+                          color:'#00f'
+                      }
+                  }
+            },
+            tooltip:{ // 提示框组件
+                //trigger:'axis'
+                formatter:function (params) {// 提示框浮层内容格式器
+                    // return '折线图示例数据:' + params.data;
+                    return '<div id="toolName" style="font-size:12px;"><span>折线图示例数据展示:</span><span style="font-size:14px;color:#000;">'+params.data+'</span></div>'
+                },
+                backgroundColor:'#f00',
+                textStyle:{
+                    color:'#fff'
+                }
             }
         }
     {% endhighlight %}
