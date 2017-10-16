@@ -93,13 +93,13 @@ category: echarts
                   }
             },
             tooltip:{ // 提示框组件
-                //trigger:'axis'
+                trigger:'axis',  // 设置触发提示框组件的类型，有item(数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用。)和axis(坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用。)
                 formatter:function (params) {// 提示框浮层内容格式器
                     // return '折线图示例数据:' + params.data;
                     return '<div id="toolName" style="font-size:12px;"><span>折线图示例数据展示:</span><span style="font-size:14px;color:#000;">'+params.data+'</span></div>'
                 },
                 backgroundColor:'#f00',
-                textStyle:{
+                textStyle:{ // 设置提示框组件的文字的样式
                     color:'#fff'
                 }
             }
