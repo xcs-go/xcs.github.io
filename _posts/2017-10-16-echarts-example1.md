@@ -33,19 +33,50 @@ category: echarts
 
 - 配置option,根据不同的图表类型进行不同的配置
   #### - 折线图
-
+    {% highlight javascript %}
+        var option = {
+            title:{  // 设置图形标题
+                text:'echarts基础图之折线图',
+                left:'center', // 设置标题在水平方向上的位置
+                top:'20', // 设置标题在垂直方向上的位置
+                textStyle:{  // 设置标题文字的样式
+                    color:'#f00'
+                }
+            }
+            series:{
+                type:'line', // series.type用来设置系列图的类型；line表示的是折线图
+            }
+        }
+    {% endhighlight %}
 
   #### - 柱状图
-
+    {% highlight javascript %}
+        var option = {
+            
+        }
+    {% endhighlight %}
 
   #### - 饼图
-
-
+    {% highlight javascript %}
+         var option = {
+                
+         }
+    {% endhighlight %}
+    
   #### - 地理图
-
+    {% highlight javascript %}
+        var option = {
+            
+        }
+    {% endhighlight %}
 
   #### - 雷达图
-
+    {% highlight javascript %}
+        var option = {
+            
+        }
+    {% endhighlight %}
+    
 - 将配置好的option作为参数传入setOption()方法中.
 {% highlight javascript %}
 echart.setOption(option);
