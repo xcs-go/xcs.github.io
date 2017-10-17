@@ -165,8 +165,68 @@ category: echarts
   #### - 饼图
     {% highlight javascript %}
          var option = {
-                
-         }
+            title:{
+                text:'2017年10月衣服销量',
+                top:20,
+                x:'center',
+                //y:'middle',
+                textStyle:{
+                    // fontSize:20
+                }
+            },
+            legend:{
+                show:true,
+                data:['毛衣','衬衫','短袖','T-shirt']
+            },
+            tooltip:{},
+            series:{
+                type:'pie',
+                // roseType:'angle',
+                data:[
+                    {
+                        name:'毛衣',value:35,
+                        itemStyle:{
+                            normal:{
+                                color:'#00f'
+                            }
+                        },
+                        labelLine:{   // 修改线的颜色
+                            normal:{
+                                show:true,
+                                lineStyle:{
+                                    color:'#0f0'
+                                }
+                            }
+                        },
+                        label:{   // 修改文字的颜色
+                            normal:{
+                                color:'#0f0'
+                            }
+                        }
+                    },
+                    {
+                        name:'衬衫',value:15
+                    },
+                    {
+                        name:'短袖',value:40
+                    },
+                    {
+                        name:'T-shirt',
+                        value:20
+                    }
+                    ]
+                /*labelLine:{
+                    normal:{
+                        show:true  // 配置是否显示提示线,默认显示
+                    }
+                },
+                label:{
+                    normal:{
+                        show:true // 配置是否显示扇形附近的标签文字,默认显示
+                    }
+                }*/
+            }
+         };
     {% endhighlight %}
     
 - 以上是饼图的基本用法，下面我们来看看地理图的基本用法：    
