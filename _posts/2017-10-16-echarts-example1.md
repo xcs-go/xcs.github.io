@@ -109,9 +109,56 @@ category: echarts
 - 以上是折线图的基本用法，下面我们来看看柱状图的基本用法：
   #### - 柱状图
     {% highlight javascript %}
-        var option = {
-            title:'echarts基础图之柱状图',     
-        }
+       var xData = ['第一季度','第二季度','第三季度','第四季度'];
+           var option = {
+               title:{
+                   text:'柱状图',
+                   left:'left'
+               },
+               legend:{
+                   data:['毛衣销售增长量','衬衫销售增长量']
+               },
+               tooltip:{}, // 不进行任何的配置，echarts会自动的读取数据中的内容进行显示
+               xAxis:{
+                   type:'category',
+                   data:[]
+               },
+               yAxis:{
+                   type:'value',
+                   splitNumber:8,  // 设置y轴被分割为几段。在type设置为category时无效,该值只是一个预估值
+                   min:0,
+                   max:'dataMax', // 将y轴的最大值设置为dataMax;echarts会根据数据自动的计算出最大值
+               },
+               series:[
+                   {
+                       name:'毛衣销售增长量',
+                       type:'bar',
+                       areaStyle:{
+                           normal:{
+                               color:'#f00'
+                           }
+                       },
+                       data:[10,39,20,70]
+                   },
+                   {
+                       name:'衬衫销售增长量',
+                       type:'bar',
+                       areaStyle:{
+                           normal:{
+                               color:'#00f'
+                           }
+                       },
+                       data:[40,15,50,70]
+                   }
+               ]
+           };
+       
+           function setAxisData(data) {
+              data.forEach(function(item,index){
+                  option.xAxis.data.push(item);
+              })
+           }
+           setAxisData(xData);
     {% endhighlight %}
 
 - 以上是柱状图的基本用法，下面我们来看看饼图的基本用法：
