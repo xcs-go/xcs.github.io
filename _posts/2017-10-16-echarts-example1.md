@@ -229,7 +229,7 @@ category: echarts
          };
     {% endhighlight %}
     
-- 以上收地理图的基本用法，下面我们来看看雷达图的基本用法：
+- 以上是饼图的基本用法，下面我们来看看雷达图的基本用法：
   #### - 雷达图
     {% highlight javascript %}
        var option = {
