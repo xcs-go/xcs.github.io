@@ -121,8 +121,134 @@ for...of循环能够自动的遍历Generator函数时生成的Itenerator对象�
     [...nums()] // [1,2]
     // 结构赋值
     let [x,y] = nums(); // x 1,y 2
-    // Array,from(nums()); // [1,2]
+    Array,from(nums()); // [1,2]
 {% endhighlight %}
-    
-    
 
+### Generator.prototype.throw()
+Generator函数返回的遍历器对象都有一个throw方法，该方法可以在函数外面抛出错误，在函数内部捕获。
+{% highlight javascript %}
+    function* g(){
+        try{
+            yield;
+        }catch(e){
+            console.log('内部捕获' + e);
+        }
+    }
+    let i = g();
+    i.next();  // {value:undefined,done:true}
+    try{
+        i.throw('a');
+        i.throw('b');
+    }catch(e){
+        console.log('外部捕获' + e);
+    }
+    // 内部捕获a
+    // 外部捕获b
+{% endhighlight %}
+
+### Generator.prototype.return()
+Generator函数返回的遍历器都有一个return方法，可以返回给定的值，并且结束遍历Generator函数.
+{% highlight javascript %}
+    function* g(){
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+    let i = g();
+    i.next(); // {value:1,done:false}
+    i.return('4'); // {value:4,done:true}
+    i.next(); // {value:undefined,done:true}    
+{% endhighlight %}
+如果return方法调用的时候不提供参数的话，那么返回值就是undefined.
+
+如果Generator函数内部有try...finally,那么return将会在finally执行完成之后再执行.
+{% highlight javascript %}
+    function* g(){
+        yield 1;
+        try{
+            yield 2;
+            yield 3;
+        }finally{
+            yield 4;
+            yield 5;
+        }
+    }
+    let i = g();
+    i.next(); // {value:1,done:false}
+    i.next(); // {value:2,done:false}
+    i.next(); // {value:3,done:false}
+    i.reutrn(7); // {value:4,done:false}
+    i.next(); // {value:5,done:false}
+    i.next(); // {value:7,done:true}
+{% endhighlight %}    
+
+### yield* 表达式
+在一个Generator函数内部调用另一个Generator函数是没有任何的作用的，如果想要这样的调用起到作用，可以使用yield*表达式来调用。
+{% highlight javascript %}
+    function* foo(){
+        yield 3;
+        yield 4;
+    }
+    function* bar(){
+        yield 1;
+        yield* foo();
+        yield 2;
+    }
+    let i = bar();
+    for(let v of i){
+        console.log(v); // 1,3,4,2
+    }
+{% endhighlight %}
+
+### 作为对象的Generator函数
+如果Generator函数作为一个对象的属性的话，可以写成如下所示的形式
+{% highlight javascript %}
+    let obj = {
+        * myGeneratorMethod(){
+            // 代码
+        }
+    }
+{% endhighlight %}
+
+
+### Generator函数的this
+Generator函数总是返回一个遍历器对象，ES6的语法规定，该对象是Generator函数的实例，也继承了Generator函数prototype上面的方法。
+{% highlight javascript %}
+    function* g(){};
+    g.prototype.hi = function(){
+        return 'hi';
+    };
+    let obj = g();
+    obj instanceof g; // true
+    obj.hi(); // 'hi'
+{% endhighlight %}
+如果将Generator函数当作普通的构造函数来使用，并不会得到构造函数的作用，因为Generator函数总是返回遍历器对象而不是this对象.
+{% highlight javascript %}
+    function* g(){
+        this.a = 1;
+    }
+    let obj = g();
+    obj.a; // undefined
+{% endhighlight %}
+Generator函数也不能跟new命令一起使用，否则会报错
+{% highlight javascript %}
+    function* F(){
+        this.a = 1;
+    }
+    let obj = new F(); // Uncaught TypeError: F is not a constructor
+{% endhighlight %}
+通过嗲用Generator函数的call方法，来实现this和new关键字的使用;方法是新建一个空的对象，让其去改变Generator函数的this指向。
+{% highlight javascript %}
+    function* F(){
+        this.a = 1;
+        yield this.b = 2;
+        yield this.c = 3;
+    }
+    let obj = {};
+    let f = F.call(obj);
+    f.next(); // {value:2,done:false}
+    f.next(); // {value:3,done:false}
+    obj.a; // 1
+    obj.b; // 2
+    obj.c; // 3
+{% endhighlight %}
