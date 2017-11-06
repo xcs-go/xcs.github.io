@@ -78,7 +78,51 @@ category: ES6
     {% endhighlight %}
     
 ### for...of循环
-    for...of循环能够自动的遍历Generator函数时生成的Itenerator对象，并且此时不需要再调用next(）方法。
+for...of循环能够自动的遍历Generator函数时生成的Itenerator对象，并且此时不需要再调用next(）方法。
+{% highlight javascript %}
+    function* foo(){
+        yield 1;
+        yield 2;
+        yield 3;
+        yield 4;
+        yield 5;
+        return 6;
+    }
+    for (let v of foo()){
+        console.log(v); // 1,2,3,4,5,6
+    }
+{% endhighlight %}
+⚠️:一旦next方法的返回对象的done属性变成了true,那么for..of循环就会结束，并且不会将done变成true的value属性给遍历出来（不包含该value值）。
+使用for...of循环可以遍历任何具有Itenerator接口的对象,⚠️原生的javascript对象没有Itenerator接口，所以for...of不能对原生的javascript对象进行遍历,如果想要对
+原生的javascript对象进行遍历的话，可以通过Generator函数给原生的对象加上Itenerator接口。
+{% highlight javascript %}
+    function* objectEntries(obj){
+        let propKeys = Reflect.ownKeys(obj);
+        for (let prop of propKeys){
+            yield [prop,obj[prop]];
+        }
+    }
+    const jane = {first:'Jane',last:'doe'};
+    for(let [key,value] of objectEntries(jane)){
+        console.log(`${key}:${value}`); // first:'Jane';last:'doe'
+    }
+{% endhighlight %}
+另外一种给原生对象添加Itenerator接口的方法是添加到对象的Symbol.iterator属性上。
+
+除了for...of以外，扩展运算符(...),解构赋值和Array.from方法内部都是调用了遍历器接口。
+{% highlight javascript %}
+    function* nums(){
+        yield 1;
+        yield 2;
+        return 3;
+        yield 4;
+    }
+    // 扩展运算符
+    [...nums()] // [1,2]
+    // 结构赋值
+    let [x,y] = nums(); // x 1,y 2
+    // Array,from(nums()); // [1,2]
+{% endhighlight %}
     
     
 
