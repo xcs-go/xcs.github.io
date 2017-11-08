@@ -142,3 +142,35 @@ co模块可以让开发者不要写Generator函数的执行器，只需要将Gen
     co(gen);
 {% endhighlight %}
 co函数返回的是一个promise对象，所以可以使用then方法继续执行。
+
+### co模块的原理
+Generator是一个异步操作的容器，其自动执行需要一种机制，能够在异步操作有了结果的时候交回执行权。
+有两种方法能够实现
+- 回调函数，可以包装成为Thunk函数
+- Promise对象。将异步操作封装成为Promise对象，使用then方法交回执行权。
+co模块就是将以上两种实现方式封装成为了一个模块，使用co模块的前提是Generator函数中的yield命令后面，只能是Thunk函数或者是Promise对象。
+
+### 基于Promise的自动执行
+基于Promise的自动执行，其实就是不断的调用then方法，传入回调函数。
+{% highlight javascript %}
+    const fs = require('fs');
+    function readFile(filename){
+        return new Promise(function(resolve,reject){
+            fs.readFile(filename,function(err,data){
+                if(err) return reject(err);
+                return resolve(data);
+            })
+        })
+    }
+    const gen = function* (){
+        let x = yield readFile('Afile');
+        let y = yield readFile('Bfile');
+    }
+    // 手动执行上面的Generator函数
+    let g = gen();
+    g.next().value.then(function(data){
+        g.next(data).value(function(data){
+            g.next(data);
+        })
+    })
+{% endhighlight %}
